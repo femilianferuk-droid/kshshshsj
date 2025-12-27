@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Accounts | Купить аккаунты</title>
+    <style>
+        :root {
+            --primary: #0088cc;
+            --secondary: #006699;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --premium: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --crypto-blue: #1e90ff;
+            --crypto-dark: #0d47a1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text h1 {
+            color: var(--dark);
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Reviews */
+        .reviews-badge {
+            background: linear-gradient(135deg, var(--success), #34d399);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4);
+        }
+
+        .social-link.telegram {
+            background: linear-gradient(135deg, #0088cc, #006699);
+        }
+
+        .social-link.support {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        /* Admin Login Button */
+        .admin-login-btn {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .admin-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success), #34d399);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-crypto {
+            background: linear-gradient(135deg, var(--crypto-blue), var(--crypto-dark));
+            color: white;
+        }
+
+        .btn-crypto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--premium), #d97706);
+            color: white;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .category-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Countries Grid */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .country-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .country-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.1);
+        }
+
+        .country-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .country-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flag {
+            font-size: 24px;
+        }
+
+        .country-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .country-code {
+            font-size: 14px;
+            color: var(--gray);
+            background: rgba(0, 136, 204, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .country-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: right;
+        }
+
+        .country-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--gray);
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 10px;
+        }
+
+        /* Accounts */
+        .accounts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .account-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .premium-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            border: 2px solid var(--premium);
+        }
+
+        .account-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.1);
+        }
+
+        .premium-card:hover {
+            border-color: var(--premium);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+        }
+
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .account-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .account-type {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: rgba(0, 136, 204, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .premium-badge {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--premium);
+        }
+
+        .account-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .premium-price {
+            color: var(--premium);
+        }
+
+        /* Stats (Только для админа) */
+        .stats-grid {
+            display: none;
+        }
+
+        .stats-grid.admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Modal - Компактный дизайн */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+            padding: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 100%;
+            width: 100%;
+            max-height: 95vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 480px) {
+            .modal-content {
+                width: 95%;
+                max-width: 450px;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .modal-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            flex: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+        }
+
+        /* Payment - Компактный дизайн */
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .method-tab {
+            flex: 1;
+            padding: 12px 8px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .method-tab.active {
+            border-color: var(--primary);
+            background: rgba(0, 136, 204, 0.05);
+        }
+
+        .method-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .method-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        .payment-details {
+            background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .payment-amount {
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+
+        .payment-info {
+            text-align: center;
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .card-details {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 12px;
+            text-align: center;
+            border: 2px solid var(--primary);
+        }
+
+        .card-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 8px 0;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            word-break: break-all;
+        }
+
+        .crypto-info {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(13, 71, 161, 0.1));
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 12px;
+            text-align: center;
+            border: 2px dashed var(--crypto-blue);
+        }
+
+        .crypto-rates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .crypto-rate {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .crypto-amount {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--crypto-dark);
+        }
+
+        .crypto-currency {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        .bot-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--crypto-blue), var(--crypto-dark));
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bot-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+        }
+
+        /* File Upload - Компактный дизайн */
+        .upload-container {
+            margin: 20px 0;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--primary);
+            border-radius: 12px;
+            padding: 30px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 136, 204, 0.05);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-area:hover {
+            background: rgba(0, 136, 204, 0.1);
+            border-color: var(--secondary);
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Submit Button - Всегда видимый и доступный */
+        .submit-container {
+            position: sticky;
+            bottom: 0;
+            background: white;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--success), #34d399);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .submit-btn:not(:disabled):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .admin-badge {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .price-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .price-control {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Premium Management */
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .premium-control {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--premium);
+        }
+
+        .premium-control-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .premium-control-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--premium), #d97706);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Receipts */
+        .receipts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .receipt-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--warning);
+        }
+
+        .receipt-card.approved {
+            border-left-color: var(--success);
+        }
+
+        .receipt-card.rejected {
+            border-left-color: var(--danger);
+        }
+
+        .receipt-info {
+            flex: 1;
+        }
+
+        .receipt-user {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .receipt-details {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .receipt-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Support */
+        .support-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border: 2px solid #fbbf24;
+        }
+
+        .support-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .support-contact {
+            font-size: 24px;
+            font-weight: 700;
+            color: #92400e;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .support-contact:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 20px;
+                border-radius: 15px;
+            }
+            
+            .payment-amount {
+                font-size: 28px;
+            }
+            
+            .card-number {
+                font-size: 16px;
+            }
+            
+            .crypto-rates {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .receipt-actions {
+                flex-direction: column;
+            }
+            
+            .admin-panel {
+                padding: 20px;
+                margin-top: 20px;
+            }
+            
+            .modal-header {
+                flex-wrap: wrap;
+            }
+            
+            .modal-title {
+                font-size: 18px;
+            }
+            
+            .premium-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 15px 20px;
+                border-radius: 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 22px;
+            }
+            
+            .reviews-badge {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .category-card {
+                padding: 20px;
+            }
+            
+            .payment-methods {
+                gap: 8px;
+            }
+            
+            .method-tab {
+                padding: 10px 6px;
+                min-height: 50px;
+            }
+            
+            .method-icon {
+                font-size: 18px;
+            }
+            
+            .method-name {
+                font-size: 12px;
+            }
+            
+            .upload-area {
+                padding: 20px 10px;
+                min-height: 100px;
+            }
+            
+            .upload-icon {
+                font-size: 24px;
+            }
+            
+            .submit-btn {
+                padding: 14px;
+                font-size: 15px;
+            }
+            
+            .admin-login-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .social-link {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+            display: none;
+            max-width: 300px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .notification {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, var(--success), #34d399);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+        }
+
+        .notification.warning {
+            background: linear-gradient(135deg, var(--warning), #fbbf24);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .badge-icon {
+            font-size: 20px;
+        }
+
+        .badge-text {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .trust-badges {
+                gap: 10px;
+            }
+            
+            .badge {
+                padding: 10px 15px;
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+            
+            .badge-text {
+                font-size: 12px;
+            }
+        }
+
+        /* Download Button */
+        .btn-download {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Scrollbar для модального окна */
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <div class="logo-icon">TG</div>
+                    <div class="logo-text">
+                        <h1>Telegram Accounts</h1>
+                        <p>Покупка аккаунтов Telegram</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://t.me/nezeexshop" class="social-link telegram" target="_blank">
+                        <span>📢</span> Наш канал
+                    </a>
+                    <a href="https://starfizovoi.t.me" class="social-link support" target="_blank">
+                        <span>💬</span> Поддержка
+                    </a>
+                    <button class="admin-login-btn" onclick="showLogin()">
+                        <span>🔐</span> Админ
+                    </button>
+                </div>
+                
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <div class="user-avatar" id="userAvatar">A</div>
+                    <div class="user-details">
+                        <span class="user-name" id="userName">Админ</span>
+                        <span class="user-role" id="userRole">Администратор</span>
+                    </div>
+                    <button class="btn btn-danger" onclick="logout()">
+                        <span>🚪</span> Выйти
+                    </button>
+                </div>
+            </div>
+            
+            <div class="reviews-badge">
+                <span>⭐</span>
+                100+ положительных отзывов
+            </div>
+            
+            <!-- Статистика показывается только админу -->
+            <div id="statsSection" class="stats-grid admin-stats" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalSales">0</div>
+                    <div class="stat-label">Продано</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalRevenue">0₽</div>
+                    <div class="stat-label">Выручка</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="pendingReceipts">0</div>
+                    <div class="stat-label">Ожидают</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="premiumActive">0</div>
+                    <div class="stat-label">Премиум</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="badge">
+                <div class="badge-icon">⚡</div>
+                <div class="badge-text">Мгновенная доставка</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🛡️</div>
+                <div class="badge-text">Гарантия</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🔒</div>
+                <div class="badge-text">Безопасно</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">💎</div>
+                <div class="badge-text">Крипто</div>
+            </div>
+        </div>
+
+        <!-- ФИЗ аккаунты - все страны -->
+        <div class="category-card">
+            <div class="category-header">
+                <div class="category-icon">🌍</div>
+                <div class="category-title">ФИЗ аккаунты по странам</div>
+            </div>
+            <div class="countries-grid" id="countriesGrid">
+                <!-- Страны будут загружены через JavaScript -->
+            </div>
+        </div>
+
+        <!-- Аккаунты с отлегой -->
+        <div class="category-card">
+            <div class="category-header">
+                <div class="category-icon">🛡️</div>
+                <div class="category-title">Аккаунты с отлегой</div>
+            </div>
+            <div class="accounts-list">
+                <div class="account-card">
+                    <div class="account-header">
+                        <div class="account-info">
+                            <div class="flag">🇺🇸</div>
+                            <div>
+                                <div class="account-name">США</div>
+                                <div class="account-type">ОТЛЕГА</div>
+                            </div>
+                        </div>
+                        <div class="account-price" id="price-usa-ot">50₽</div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('США', 'ОТЛЕГА', 'usa-ot')">
+                        <span>🛒</span> Купить
+                    </button>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-header">
+                        <div class="account-info">
+                            <div class="flag">🇮🇳</div>
+                            <div>
+                                <div class="account-name">Индия</div>
+                                <div class="account-type">ОТЛЕГА</div>
+                            </div>
+                        </div>
+                        <div class="account-price" id="price-india-ot">25₽</div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('Индия', 'ОТЛЕГА', 'india-ot')">
+                        <span>🛒</span> Купить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Премиум аккаунты -->
+        <div class="category-card">
+            <div class="category-header">
+                <div class="category-icon premium-icon">💎</div>
+                <div class="category-title">Премиум аккаунты</div>
+            </div>
+            <div class="accounts-list">
+                <div class="account-card premium-card">
+                    <div class="account-header">
+                        <div class="account-info">
+                            <div class="flag">🇺🇸</div>
+                            <div>
+                                <div class="account-name">США Премиум</div>
+                                <div class="account-type premium-badge">ПРЕМИУМ</div>
+                            </div>
+                        </div>
+                        <div class="account-price premium-price" id="price-usa-premium">500₽</div>
+                    </div>
+                    <div class="account-details" id="usa-premium-details">
+                        Подписка до: 01.01.2025
+                    </div>
+                    <button class="btn btn-premium" style="width: 100%;" onclick="buyAccount('США Премиум', 'ПРЕМИУМ', 'usa-premium')">
+                        <span>💎</span> Купить премиум
+                    </button>
+                </div>
+
+                <div class="account-card premium-card">
+                    <div class="account-header">
+                        <div class="account-info">
+                            <div class="flag">🇷🇺</div>
+                            <div>
+                                <div class="account-name">Россия Премиум</div>
+                                <div class="account-type premium-badge">ПРЕМИУМ</div>
+                            </div>
+                        </div>
+                        <div class="account-price premium-price" id="price-russia-premium">1000₽</div>
+                    </div>
+                    <div class="account-details" id="russia-premium-details">
+                        Подписка до: 01.01.2025
+                    </div>
+                    <button class="btn btn-premium" style="width: 100%;" onclick="buyAccount('Россия Премиум', 'ПРЕМИУМ', 'russia-premium')">
+                        <span>💎</span> Купить премиум
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="adminPanel" class="admin-panel">
+            <div class="admin-header">
+                <h2 style="font-size: 28px; color: var(--dark);">Панель администратора</h2>
+                <div class="admin-badge">ADMIN</div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('prices')">💰 Управление ценами</button>
+                <button class="tab-btn" onclick="switchTab('premium')">💎 Премиум аккаунты</button>
+                <button class="tab-btn" onclick="switchTab('receipts')">📄 Проверка чеков</button>
+                <button class="tab-btn" onclick="switchTab('statistics')">📊 Статистика</button>
+            </div>
+
+            <!-- Prices Tab -->
+            <div id="tab-prices" class="tab-content active">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Настройка цен для всех стран</h3>
+                <div class="price-controls" id="allCountriesControls">
+                    <!-- Цены всех стран будут загружены через JavaScript -->
+                </div>
+            </div>
+
+            <!-- Premium Tab -->
+            <div id="tab-premium" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Управление премиум аккаунтами</h3>
+                <div class="premium-grid">
+                    <div class="premium-control">
+                        <div class="premium-control-header">
+                            <div class="premium-control-icon">🇺🇸</div>
+                            <h4 style="color: var(--dark);">США Премиум</h4>
+                        </div>
+                        <div class="input-group">
+                            <label>Цена:</label>
+                            <input type="number" class="form-input" id="admin-price-usa-premium" value="500" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Дата окончания подписки:</label>
+                            <input type="date" class="form-input" id="admin-date-usa-premium">
+                        </div>
+                        <div class="input-group">
+                            <label>Страна:</label>
+                            <select class="form-input" id="admin-country-usa-premium">
+                                <option value="usa">США</option>
+                                <option value="russia">Россия</option>
+                                <option value="germany">Германия</option>
+                                <option value="uk">Великобритания</option>
+                                <option value="france">Франция</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-premium" onclick="updatePremium('usa')">
+                            Обновить премиум
+                        </button>
+                    </div>
+
+                    <div class="premium-control">
+                        <div class="premium-control-header">
+                            <div class="premium-control-icon">🇷🇺</div>
+                            <h4 style="color: var(--dark);">Россия Премиум</h4>
+                        </div>
+                        <div class="input-group">
+                            <label>Цена:</label>
+                            <input type="number" class="form-input" id="admin-price-russia-premium" value="1000" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Дата окончания подписки:</label>
+                            <input type="date" class="form-input" id="admin-date-russia-premium">
+                        </div>
+                        <div class="input-group">
+                            <label>Страна:</label>
+                            <select class="form-input" id="admin-country-russia-premium">
+                                <option value="russia">Россия</option>
+                                <option value="usa">США</option>
+                                <option value="germany">Германия</option>
+                                <option value="uk">Великобритания</option>
+                                <option value="france">Франция</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-premium" onclick="updatePremium('russia')">
+                            Обновить премиум
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Receipts Tab -->
+            <div id="tab-receipts" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Чеки на проверку</h3>
+                <div class="receipts-list" id="receiptsList">
+                    <!-- Receipts will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div id="tab-statistics" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Статистика продаж</h3>
+                <div class="stats-grid admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-total-sales">0</div>
+                        <div class="stat-label">Всего продаж</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-today-sales">0</div>
+                        <div class="stat-label">Продаж сегодня</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-total-revenue">0₽</div>
+                        <div class="stat-label">Общая выручка</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-premium-sales">0</div>
+                        <div class="stat-label">Премиум продаж</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div class="modal-header">
+                    <div class="modal-icon">💳</div>
+                    <div class="modal-title">Оплата заказа</div>
+                </div>
+                
+                <div class="payment-methods">
+                    <div class="method-tab active" id="cardTab" onclick="switchPaymentMethod('card')">
+                        <div class="method-icon">💳</div>
+                        <div class="method-name">Карта</div>
+                    </div>
+                    <div class="method-tab" id="cryptoTab" onclick="switchPaymentMethod('crypto')">
+                        <div class="method-icon">💰</div>
+                        <div class="method-name">Криптовалюта</div>
+                    </div>
+                </div>
+                
+                <div class="payment-details">
+                    <div class="payment-info">Сумма к оплате:</div>
+                    <div class="payment-amount" id="paymentAmount">0₽</div>
+                    
+                    <!-- Card Payment -->
+                    <div id="cardPayment" class="payment-method-content">
+                        <div class="payment-info">Переведите средства на карту:</div>
+                        <div class="card-details">
+                            <div>Номер карты:</div>
+                            <div class="card-number">5599 0021 2767 5173</div>
+                            <div>Получатель: Система оплаты</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Crypto Payment -->
+                    <div id="cryptoPayment" class="payment-method-content" style="display: none;">
+                        <div class="payment-info">Оплатите через крипто-бота:</div>
+                        
+                        <div class="crypto-info">
+                            <div class="crypto-rates">
+                                <div class="crypto-rate">
+                                    <div class="crypto-amount" id="usdtAmount">0</div>
+                                    <div class="crypto-currency">USDT</div>
+                                </div>
+                                <div class="crypto-rate">
+                                    <div class="crypto-amount" id="tonAmount">0</div>
+                                    <div class="crypto-currency">TON</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin: 15px 0;">
+                                <div style="color: var(--gray); font-size: 14px;">Курс:</div>
+                                <div style="color: var(--dark); font-weight: 600;">USDT = 78₽ | TON = 120₽</div>
+                            </div>
+                            
+                            <a href="http://t.me/send?start=IVKF2M5j40O5" class="bot-link" target="_blank" id="cryptoBotLink">
+                                <span>🤖</span> Перейти в крипто-бота
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-container">
+                    <div class="payment-info">Загрузите скриншот чека:</div>
+                    <div class="upload-area" id="uploadArea" onclick="document.getElementById('receiptInput').click()">
+                        <div class="upload-icon">📎</div>
+                        <div style="font-size: 18px; color: var(--dark); margin-bottom: 10px;">Нажмите для загрузки</div>
+                        <div style="color: var(--gray); font-size: 14px;">Поддерживаемые форматы: JPG, PNG, PDF</div>
+                    </div>
+                    <input type="file" id="receiptInput" accept="image/*,.pdf" style="display:none" onchange="uploadReceipt(event)">
+                    <div id="uploadedFile" style="display:none; margin-top: 15px;"></div>
+                </div>
+
+                <div class="submit-container">
+                    <button class="submit-btn" onclick="submitPayment()" id="submitPaymentBtn" disabled>
+                        <span>✅</span> Отправить чек
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔐</div>
+                    <div class="modal-title">Вход для администратора</div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Логин:</label>
+                    <input type="text" class="form-input" id="loginUsername" placeholder="Введите логин">
+                </div>
+                
+                <div class="input-group">
+                    <label>Пароль:</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="Введите пароль">
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%; padding: 18px; margin-top: 20px;" onclick="performLogin()">
+                    <span>🚪</span> Войти
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Инициализация данных
+        let users = JSON.parse(localStorage.getItem('users') || '[]');
+        let currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        let receipts = JSON.parse(localStorage.getItem('receipts') || '[]');
+        let currentPurchase = null;
+        let statistics = JSON.parse(localStorage.getItem('statistics') || '{"totalSales": 0, "totalRevenue": 0, "todaySales": 0, "premiumSales": 0}');
+        let currentPaymentMethod = 'card';
+        
+        // Курсы криптовалют
+        const cryptoRates = {
+            USDT: 78,
+            TON: 120
+        };
+
+        // Данные всех стран
+        const allCountries = [
+            { code: "+1", flag: "🇺🇸", name: "США", price: 30, usd: 0.46, key: "usa" },
+            { code: "+1", flag: "🇨🇦", name: "Канада", price: 35, usd: 0.46, key: "canada" },
+            { code: "+7", flag: "🇷🇺", name: "Россия", price: 199, usd: 3.90, key: "russia" },
+            { code: "+7", flag: "🇰🇿", name: "Казахстан", price: 175, usd: 2.28, key: "kazakhstan" },
+            { code: "+20", flag: "🇪🇬", name: "Египет", price: 50, usd: 0.65, key: "egypt" },
+            { code: "+27", flag: "🇿🇦", name: "ЮАР", price: 100, usd: 1.30, key: "south-africa" },
+            { code: "+30", flag: "🇬🇷", name: "Греция", price: 175, usd: 2.28, key: "greece" },
+            { code: "+31", flag: "🇳🇱", name: "Нидерланды", price: 275, usd: 3.58, key: "netherlands" },
+            { code: "+32", flag: "🇧🇪", name: "Бельгия", price: 1200, usd: 15.60, key: "belgium" },
+            { code: "+33", flag: "🇫🇷", name: "Франция", price: 250, usd: 3.25, key: "france" },
+            { code: "+34", flag: "🇪🇸", name: "Испания", price: 250, usd: 3.25, key: "spain" },
+            { code: "+36", flag: "🇭🇺", name: "Венгрия", price: 250, usd: 3.25, key: "hungary" },
+            { code: "+39", flag: "🇮🇹", name: "Италия", price: 600, usd: 7.80, key: "italy" },
+            { code: "+40", flag: "🇷🇴", name: "Румыния", price: 80, usd: 1.04, key: "romania" },
+            { code: "+41", flag: "🇨🇭", name: "Швейцария", price: 2000, usd: 26.00, key: "switzerland" },
+            { code: "+43", flag: "🇦🇹", name: "Австрия", price: 1000, usd: 13.00, key: "austria" },
+            { code: "+44", flag: "🇬🇧", name: "Великобритания", price: 125, usd: 1.63, key: "uk" },
+            { code: "+45", flag: "🇩🇰", name: "Дания", price: 1150, usd: 14.95, key: "denmark" },
+            { code: "+46", flag: "🇸🇪", name: "Швеция", price: 400, usd: 5.20, key: "sweden" },
+            { code: "+47", flag: "🇳🇴", name: "Норвегия", price: 1150, usd: 14.95, key: "norway" },
+            { code: "+48", flag: "🇵🇱", name: "Польша", price: 275, usd: 3.58, key: "poland" },
+            { code: "+55", flag: "🇧🇷", name: "Бразилия", price: 125, usd: 1.63, key: "brazil" },
+            { code: "+57", flag: "🇨🇴", name: "Колумбия", price: 75, usd: 0.98, key: "colombia" },
+            { code: "+62", flag: "🇮🇩", name: "Индонезия", price: 50, usd: 0.65, key: "indonesia" },
+            { code: "+84", flag: "🇻🇳", name: "Вьетнам", price: 70, usd: 0.91, key: "vietnam" },
+            { code: "+86", flag: "🇨🇳", name: "Китай", price: 750, usd: 9.75, key: "china" },
+            { code: "+90", flag: "🇹🇷", name: "Турция", price: 100, usd: 1.30, key: "turkey" },
+            { code: "+91", flag: "🇮🇳", name: "Индия", price: 40, usd: 0.52, key: "india" },
+            { code: "+92", flag: "🇵🇰", name: "Пакистан", price: 70, usd: 0.91, key: "pakistan" },
+            { code: "+93", flag: "🇦🇫", name: "Афганистан", price: 75, usd: 0.98, key: "afghanistan" },
+            { code: "+94", flag: "🇱🇰", name: "Шри-Ланка", price: 100, usd: 1.30, key: "sri-lanka" },
+            { code: "+95", flag: "🇲🇲", name: "Мьянма", price: 35, usd: 0.46, key: "myanmar" },
+            { code: "+98", flag: "🇮🇷", name: "Иран", price: 175, usd: 2.28, key: "iran" },
+            { code: "+212", flag: "🇲🇦", name: "Марокко", price: 75, usd: 0.98, key: "morocco" },
+            { code: "+225", flag: "🇨🇮", name: "Кот-д'Ивуар", price: 750, usd: 9.75, key: "ivory-coast" },
+            { code: "+233", flag: "🇬🇭", name: "Гана", price: 550, usd: 7.15, key: "ghana" },
+            { code: "+234", flag: "🇳🇬", name: "Нигерия", price: 45, usd: 0.59, key: "nigeria" },
+            { code: "+254", flag: "🇰🇪", name: "Кения", price: 40, usd: 0.52, key: "kenya" },
+            { code: "+373", flag: "🇲🇩", name: "Молдова", price: 175, usd: 2.28, key: "moldova" },
+            { code: "+374", flag: "🇦🇲", name: "Армения", price: 400, usd: 14.95, key: "armenia" },
+            { code: "+375", flag: "🇧🇾", name: "Беларусь", price: 170, usd: 6.50, key: "belarus" },
+            { code: "+380", flag: "🇺🇦", name: "Украина", price: 235, usd: 3.06, key: "ukraine" }
+        ];
+
+        // Данные премиум аккаунтов
+        let premiumAccounts = JSON.parse(localStorage.getItem('premiumAccounts') || '[]');
+        if (premiumAccounts.length === 0) {
+            premiumAccounts = [
+                {
+                    id: 'usa-premium',
+                    country: 'США',
+                    price: 500,
+                    endDate: '2025-01-01',
+                    countryKey: 'usa'
+                },
+                {
+                    id: 'russia-premium',
+                    country: 'Россия',
+                    price: 1000,
+                    endDate: '2025-01-01',
+                    countryKey: 'russia'
+                }
+            ];
+            localStorage.setItem('premiumAccounts', JSON.stringify(premiumAccounts));
+        }
+
+        // Инициализация админа
+        function initAdmin() {
+            if (!users.find(u => u.username === 'admin')) {
+                users.push({
+                    username: 'admin',
+                    password: 'admin123',
+                    email: 'admin@system.com',
+                    role: 'admin',
+                    createdAt: new Date().toISOString()
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+
+        // Инициализация цен стран
+        function initCountryPrices() {
+            const prices = JSON.parse(localStorage.getItem('countryPrices') || '{}');
+            let hasNewData = false;
+
+            allCountries.forEach(country => {
+                if (!prices[country.key]) {
+                    prices[country.key] = country.price;
+                    hasNewData = true;
+                }
+            });
+
+            if (hasNewData) {
+                localStorage.setItem('countryPrices', JSON.stringify(prices));
+            }
+
+            updateCountryDisplay();
+        }
+
+        // Обновление отображения стран
+        function updateCountryDisplay() {
+            const prices = JSON.parse(localStorage.getItem('countryPrices') || '{}');
+            const countriesGrid = document.getElementById('countriesGrid');
+            countriesGrid.innerHTML = '';
+
+            allCountries.forEach(country => {
+                const price = prices[country.key] || country.price;
+                const card = document.createElement('div');
+                card.className = 'country-card';
+                card.innerHTML = `
+                    <div class="country-header">
+                        <div class="country-info">
+                            <div class="flag">${country.flag}</div>
+                            <div>
+                                <div class="country-name">${country.name}</div>
+                                <div class="country-code">${country.code}</div>
+                            </div>
+                        </div>
+                        <div class="country-price">${price}₽</div>
+                    </div>
+                    <div class="country-details">
+                        <div>~$${country.usd}</div>
+                        <div>ФИЗ аккаунт</div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('${country.name}', 'ФИЗ', '${country.key}')">
+                        <span>🛒</span> Купить
+                    </button>
+                `;
+                countriesGrid.appendChild(card);
+            });
+        }
+
+        // Обновление отображения премиум аккаунтов
+        function updatePremiumDisplay() {
+            premiumAccounts.forEach(account => {
+                const priceElement = document.getElementById(`price-${account.id}`);
+                const detailsElement = document.getElementById(`${account.id}-details`);
+                
+                if (priceElement) {
+                    priceElement.textContent = account.price + '₽';
+                }
+                
+                if (detailsElement) {
+                    const formattedDate = new Date(account.endDate).toLocaleDateString('ru-RU');
+                    detailsElement.textContent = `Подписка до: ${formattedDate}`;
+                }
+            });
+        }
+
+        // Обновление статистики
+        function updateStatistics() {
+            const approvedReceipts = receipts.filter(r => r.status === 'approved');
+            const today = new Date().toDateString();
+            const todayReceipts = approvedReceipts.filter(r => new Date(r.date).toDateString() === today);
+            const premiumReceipts = approvedReceipts.filter(r => r.type === 'ПРЕМИУМ');
+            
+            statistics.totalSales = approvedReceipts.length;
+            statistics.totalRevenue = approvedReceipts.reduce((sum, r) => sum + parseInt(r.price), 0);
+            statistics.todaySales = todayReceipts.length;
+            statistics.premiumSales = premiumReceipts.length;
+            
+            localStorage.setItem('statistics', JSON.stringify(statistics));
+            
+            // Обновление отображения только для админа
+            if (currentUser && currentUser.role === 'admin') {
+                document.getElementById('totalSales').textContent = statistics.totalSales;
+                document.getElementById('totalRevenue').textContent = statistics.totalRevenue + '₽';
+                document.getElementById('pendingReceipts').textContent = receipts.filter(r => r.status === 'pending').length;
+                document.getElementById('premiumActive').textContent = statistics.premiumSales;
+                
+                // Для админки
+                document.getElementById('admin-total-sales').textContent = statistics.totalSales;
+                document.getElementById('admin-today-sales').textContent = statistics.todaySales;
+                document.getElementById('admin-total-revenue').textContent = statistics.totalRevenue + '₽';
+                document.getElementById('admin-premium-sales').textContent = statistics.premiumSales;
+            }
+        }
+
+        // Показать/скрыть статистику в зависимости от роли
+        function updateStatsVisibility() {
+            const statsSection = document.getElementById('statsSection');
+            if (currentUser && currentUser.role === 'admin') {
+                statsSection.style.display = 'grid';
+            } else {
+                statsSection.style.display = 'none';
+            }
+        }
+
+        // Уведомления
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Загрузка при запуске
+        window.onload = function() {
+            initAdmin();
+            initCountryPrices();
+            updatePremiumDisplay();
+            updateStatistics();
+            
+            if (currentUser) {
+                showUserMenu();
+                updateStatsVisibility();
+                if (currentUser.role === 'admin') {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadReceipts();
+                    loadCountryControls();
+                }
+            }
+        };
+
+        // Показать меню пользователя
+        function showUserMenu() {
+            document.querySelector('.social-links').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'flex';
+            document.getElementById('userName').textContent = currentUser.username;
+            document.getElementById('userRole').textContent = currentUser.role === 'admin' ? 'Администратор' : 'Пользователь';
+            document.getElementById('userAvatar').textContent = currentUser.username.charAt(0).toUpperCase();
+        }
+
+        // Модальные окна
+        function showLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Переключение метода оплаты
+        function switchPaymentMethod(method) {
+            currentPaymentMethod = method;
+            
+            // Обновить активную вкладку
+            document.querySelectorAll('.method-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            if (method === 'card') {
+                document.getElementById('cardTab').classList.add('active');
+                document.getElementById('cardPayment').style.display = 'block';
+                document.getElementById('cryptoPayment').style.display = 'none';
+            } else {
+                document.getElementById('cryptoTab').classList.add('active');
+                document.getElementById('cardPayment').style.display = 'none';
+                document.getElementById('cryptoPayment').style.display = 'block';
+                
+                // Обновить крипто суммы
+                updateCryptoAmounts();
+            }
+        }
+
+        // Обновление крипто сумм
+        function updateCryptoAmounts() {
+            if (currentPurchase) {
+                const rubAmount = currentPurchase.price;
+                const usdtAmount = (rubAmount / cryptoRates.USDT).toFixed(6);
+                const tonAmount = (rubAmount / cryptoRates.TON).toFixed(6);
+                
+                document.getElementById('usdtAmount').textContent = usdtAmount;
+                document.getElementById('tonAmount').textContent = tonAmount;
+                
+                // Обновить ссылку бота с суммой
+                const botLink = `http://t.me/send?start=IVKF2M5j40O5&amount=${rubAmount}`;
+                document.getElementById('cryptoBotLink').href = botLink;
+            }
+        }
+
+        // Авторизация
+        function performLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                showUserMenu();
+                closeModal();
+                
+                updateStatsVisibility();
+                
+                if (user.role === 'admin') {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadReceipts();
+                    loadCountryControls();
+                }
+                
+                showNotification('Успешный вход в систему!', 'success');
+            } else {
+                showNotification('Неверный логин или пароль', 'error');
+            }
+        }
+
+        // Выход
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            document.querySelector('.social-links').style.display = 'flex';
+            document.getElementById('userInfo').style.display = 'none';
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('statsSection').style.display = 'none';
+            showNotification('Вы вышли из системы', 'success');
+        }
+
+        // Покупка аккаунта
+        function buyAccount(country, type, key) {
+            const prices = JSON.parse(localStorage.getItem('countryPrices') || '{}');
+            let price = 0;
+            let accountName = country;
+
+            // Определяем цену
+            if (key.includes('premium')) {
+                const premiumAccount = premiumAccounts.find(a => a.id === key);
+                if (premiumAccount) {
+                    price = premiumAccount.price;
+                    accountName = premiumAccount.country + ' Премиум';
+                }
+            } else if (key === 'usa-ot') {
+                price = 50;
+            } else if (key === 'india-ot') {
+                price = 25;
+            } else {
+                price = prices[key] || allCountries.find(c => c.key === key)?.price || 0;
+            }
+
+            currentPurchase = {
+                id: Date.now(),
+                country: accountName,
+                type: type,
+                price: price,
+                user: 'Покупатель',
+                status: 'pending',
+                date: new Date().toLocaleString(),
+                timestamp: Date.now(),
+                paymentMethod: 'card',
+                accountKey: key
+            };
+
+            document.getElementById('paymentAmount').textContent = price + '₽';
+            document.getElementById('paymentModal').style.display = 'flex';
+            
+            // Сбросить метод оплаты к карте
+            switchPaymentMethod('card');
+            updateCryptoAmounts();
+        }
+
+        // Загрузка чека
+        function uploadReceipt(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('uploadArea').innerHTML = `
+                        <div class="upload-icon">✅</div>
+                        <div style="font-size: 18px; color: var(--dark); margin-bottom: 10px;">${file.name}</div>
+                        <div style="color: var(--success); font-size: 14px;">Файл успешно загружен</div>
+                    `;
+                    document.getElementById('uploadArea').style.background = 'rgba(16, 185, 129, 0.1)';
+                    document.getElementById('uploadArea').style.borderColor = 'var(--success)';
+                    document.getElementById('submitPaymentBtn').disabled = false;
+                    
+                    currentPurchase.receipt = e.target.result;
+                    currentPurchase.receiptName = file.name;
+                    currentPurchase.fileType = file.type;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Подтверждение оплаты
+        function submitPayment() {
+            if (!currentPurchase.receipt) {
+                showNotification('Пожалуйста, загрузите чек', 'error');
+                return;
+            }
+
+            currentPurchase.paymentMethod = currentPaymentMethod;
+            currentPurchase.paymentTimestamp = new Date().toLocaleString();
+            
+            receipts.push(currentPurchase);
+            localStorage.setItem('receipts', JSON.stringify(receipts));
+
+            showNotification('Чек отправлен на проверку! Ожидайте подтверждения.', 'success');
+            closeModal();
+            
+            updateStatistics();
+            
+            if (currentUser && currentUser.role === 'admin') {
+                loadReceipts();
+            }
+        }
+
+        // Админ: Переключение вкладок
+        function switchTab(tabName) {
+            // Скрыть все вкладки
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Убрать активный класс со всех кнопок
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Показать выбранную вкладку
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            // Добавить активный класс кнопке
+            event.target.classList.add('active');
+            
+            // Обновить данные если нужно
+            if (tabName === 'receipts') {
+                loadReceipts();
+            } else if (tabName === 'prices') {
+                loadCountryControls();
+            }
+        }
+
+        // Админ: Загрузка чеков
+        function loadReceipts() {
+            const receiptsList = document.getElementById('receiptsList');
+            receiptsList.innerHTML = '';
+
+            const pendingReceipts = receipts.filter(r => r.status === 'pending');
+            const approvedReceipts = receipts.filter(r => r.status === 'approved');
+            const rejectedReceipts = receipts.filter(r => r.status === 'rejected');
+
+            if (receipts.length === 0) {
+                receiptsList.innerHTML = '<p style="text-align: center; color: var(--gray); padding: 40px;">Нет чеков для отображения</p>';
+                return;
+            }
+
+            // Показываем все чеки
+            [...pendingReceipts, ...approvedReceipts, ...rejectedReceipts].forEach(receipt => {
+                const item = document.createElement('div');
+                item.className = `receipt-card ${receipt.status}`;
+                
+                let statusBadge = '';
+                let actions = '';
+                
+                if (receipt.status === 'pending') {
+                    statusBadge = '<span style="color: var(--warning); font-weight: 600;">⏳ Ожидает</span>';
+                    actions = `
+                        <button class="btn btn-success" onclick="processReceipt(${receipt.id}, 'approved')" style="padding: 8px 15px;">
+                            ✓ Одобрить
+                        </button>
+                        <button class="btn btn-danger" onclick="processReceipt(${receipt.id}, 'rejected')" style="padding: 8px 15px;">
+                            ✗ Отклонить
+                        </button>
+                        ${receipt.receipt ? `<button class="btn btn-download" onclick="downloadReceipt(${receipt.id})" style="padding: 8px 15px;">
+                            📥 Скачать чек
+                        </button>` : ''}
+                    `;
+                } else if (receipt.status === 'approved') {
+                    statusBadge = '<span style="color: var(--success); font-weight: 600;">✅ Одобрен</span>';
+                    actions = receipt.receipt ? `
+                        <button class="btn btn-download" onclick="downloadReceipt(${receipt.id})" style="padding: 8px 15px;">
+                            📥 Скачать чек
+                        </button>
+                    ` : '';
+                } else {
+                    statusBadge = '<span style="color: var(--danger); font-weight: 600;">❌ Отклонен</span>';
+                    actions = receipt.receipt ? `
+                        <button class="btn btn-download" onclick="downloadReceipt(${receipt.id})" style="padding: 8px 15px;">
+                            📥 Скачать чек
+                        </button>
+                    ` : '';
+                }
+                
+                const paymentMethod = receipt.paymentMethod === 'crypto' ? 'Крипто' : 'Карта';
+                
+                item.innerHTML = `
+                    <div class="receipt-info">
+                        <div class="receipt-user">${receipt.user}</div>
+                        <div class="receipt-details">
+                            ${receipt.country} - ${receipt.type} | ${receipt.price}₽
+                            <br>
+                            <small>${receipt.date}</small>
+                            <br>
+                            <small>Способ оплаты: ${paymentMethod}</small>
+                            <br>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                    <div class="receipt-actions">
+                        ${actions}
+                    </div>
+                `;
+                receiptsList.appendChild(item);
+            });
+        }
+
+        // Скачивание чека
+        function downloadReceipt(receiptId) {
+            const receipt = receipts.find(r => r.id === receiptId);
+            if (receipt && receipt.receipt) {
+                // Создаем временную ссылку для скачивания
+                const link = document.createElement('a');
+                link.href = receipt.receipt;
+                link.download = `чек_${receipt.user}_${receipt.date}.${receipt.fileType.includes('pdf') ? 'pdf' : 'png'}`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                showNotification('Чек скачан', 'success');
+            } else {
+                showNotification('Чек не найден', 'error');
+            }
+        }
+
+        // Админ: Обработка чека
+        function processReceipt(receiptId, action) {
+            const receiptIndex = receipts.findIndex(r => r.id === receiptId);
+            if (receiptIndex !== -1) {
+                receipts[receiptIndex].status = action;
+                receipts[receiptIndex].processedBy = currentUser.username;
+                receipts[receiptIndex].processedAt = new Date().toLocaleString();
+                
+                localStorage.setItem('receipts', JSON.stringify(receipts));
+                
+                showNotification(`Чек ${action === 'approved' ? 'одобрен' : 'отклонен'}`, 'success');
+                loadReceipts();
+                updateStatistics();
+            }
+        }
+
+        // Админ: Загрузка управления ценами стран
+        function loadCountryControls() {
+            const controlsContainer = document.getElementById('allCountriesControls');
+            const prices = JSON.parse(localStorage.getItem('countryPrices') || '{}');
+            
+            controlsContainer.innerHTML = '';
+            
+            allCountries.forEach(country => {
+                const price = prices[country.key] || country.price;
+                const control = document.createElement('div');
+                control.className = 'price-control';
+                control.innerHTML = `
+                    <div class="input-group">
+                        <label>${country.flag} ${country.name} (${country.code}):</label>
+                        <input type="number" class="form-input" id="admin-price-${country.key}" value="${price}" min="0">
+                    </div>
+                    <button class="btn btn-primary" onclick="updateCountryPrice('${country.key}')">
+                        Обновить
+                    </button>
+                `;
+                controlsContainer.appendChild(control);
+            });
+        }
+
+        // Админ: Обновление цены страны
+        function updateCountryPrice(countryKey) {
+            const price = document.getElementById(`admin-price-${countryKey}`).value;
+            const prices = JSON.parse(localStorage.getItem('countryPrices') || '{}');
+            prices[countryKey] = parseInt(price);
+            localStorage.setItem('countryPrices', JSON.stringify(prices));
+            
+            updateCountryDisplay();
+            showNotification(`Цена страны обновлена`, 'success');
+        }
+
+        // Админ: Обновление премиум аккаунта
+        function updatePremium(type) {
+            const priceElement = document.getElementById(`admin-price-${type}-premium`);
+            const dateElement = document.getElementById(`admin-date-${type}-premium`);
+            const countryElement = document.getElementById(`admin-country-${type}-premium`);
+            
+            const premiumIndex = premiumAccounts.findIndex(a => a.id === `${type}-premium`);
+            
+            if (premiumIndex !== -1) {
+                premiumAccounts[premiumIndex].price = parseInt(priceElement.value);
+                if (dateElement.value) {
+                    premiumAccounts[premiumIndex].endDate = dateElement.value;
+                }
+                premiumAccounts[premiumIndex].countryKey = countryElement.value;
+                
+                localStorage.setItem('premiumAccounts', JSON.stringify(premiumAccounts));
+                updatePremiumDisplay();
+                showNotification('Премиум аккаунт обновлен', 'success');
+            }
+        }
+
+        // Закрытие модальных окон при клике вне их
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        };
+
+        // Автозакрытие модальных окон по ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
